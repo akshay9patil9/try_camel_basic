@@ -1,0 +1,35 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.9'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'akshay'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.camel.springboot:camel-spring-boot-starter:4.4.1'
+	implementation 'org.apache.camel.springboot:camel-servlet-starter:4.4.1'
+	implementation 'org.apache.camel.springboot:camel-jackson-starter:4.4.1'
+	implementation 'org.apache.camel:camel-http:4.4.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.3.3'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

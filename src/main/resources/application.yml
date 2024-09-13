@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: try_camel_basic
+server:
+  port: 8081
+
+  tomcat:
+    threads:
+      max: 50
+      min-spare: 2
+    max-connections: 10
+
+camel:
+  servlet:
+    mapping:
+      context-path: /so/*
+
+app:
+  sokey: <stackoverflow-key>
